@@ -44,16 +44,15 @@
 			</div>
 			<div class="mt-5 md:flex md:gap-2 md:items-center">
 				<p class="font-bold">Border Countries:</p>
-				<div class="flex gap-2 flex-wrap md:items-center">
+				<div v-if="currentCountry.borders" class="flex gap-2 flex-wrap md:items-center">
 					<button
 						class="shadow-md px-6 py-1 bg-white dark:bg-dark-blue rounded-md max-w-max"
-						v-if="currentCountry.borders"
 						v-for="(border, index) in currentCountry.borders"
 						:key="index">
 						{{ border }}
 					</button>
-					<p v-else>This country don't have any borders!</p>
 				</div>
+				<p v-else>This country don't have any borders!</p>
 			</div>
 		</div>
 	</div>
@@ -71,6 +70,8 @@ const countryName = route.params.name
 const countries = ref<any[]>(database)
 
 const currentCountry = computed(() => {
-	return countries.value.find((country: CountryDetails) => country.name === countryName)
+	return countries.value.find(
+		(country: CountryDetails) => country.name.toLowerCase() === countryName.toString().toLowerCase()
+	)
 })
 </script>

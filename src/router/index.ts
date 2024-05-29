@@ -14,6 +14,11 @@ const router = createRouter({
 			name: 'country',
 			component: () => import('@/views/CountryDetailsView.vue'),
 		},
+		{
+			path: '/:catchAll(.*)',
+			name: 'NotFound',
+			redirect: '/',
+		},
 	],
 })
 

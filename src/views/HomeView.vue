@@ -1,10 +1,13 @@
 <template>
 	<div class="flex flex-col justify-between gap-10 lg:flex-row">
-		<input
-			type="text"
-			class="w-full max-w-[500px] border rounded-md outline-none py-2 px-10 dark:bg-dark-blue dark:border-none"
-			placeholder="Search for a country..."
-			v-model="query" />
+		<div class="w-full max-w-[500px] relative">
+			<i class="pi pi-search absolute top-1/2 left-3 -translate-y-1/2"></i>
+			<input
+				type="text"
+				class="w-full border rounded-md outline-none py-2 px-10 dark:bg-dark-blue dark:border-none"
+				placeholder="Search for a country..."
+				v-model="query" />
+		</div>
 		<select
 			class="max-w-[200px] p-2 border rounded-md outline-none dark:bg-dark-blue dark:border-none"
 			v-model="selectedRegion">
@@ -16,21 +19,22 @@
 			<option value="Oceania">Oceania</option>
 		</select>
 	</div>
-	<div class="w-full flex flex-col justify-between items-center md:flex-row md:flex-wrap">
+	<div class="w-full flex flex-col gap-8 items-center md:flex-row md:flex-wrap">
 		<div class="mt-10" v-for="country in filteredCountries" :key="country.name">
 			<RouterLink :to="`/country/${country.name}`">
-				<BaseCard :country="country" />
+				<CountryCard :country="country" />
 			</RouterLink>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import BaseCard from '@/components/ui/BaseCard.vue'
+import CountryCard from '@/components/ui/CountryCard.vue'
 import database from '@/db/data.json'
 import type { GeneralCountryInfo } from '@/types/GeneralCountryInfo'
 import { ref, computed } from 'vue'
 import { RouterLink } from 'vue-router'
+
 
 const countriesData = ref<any[]>(database)
 const query = ref<string>('')
@@ -55,4 +59,5 @@ const filteredCountries = computed(() => {
 		return matchesQuery && matchesRegion
 	})
 })
+
 </script>
