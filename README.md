@@ -1,33 +1,24 @@
-# countries-api
+# Countries REST API
 
-This template should help get you started developing with Vue 3 in Vite.
+A fully responsive application that allows users to explore general information about any country in the world. Users can check details such as population, currency, borders, and flags. The app features a light mode and dark mode toggle for a personalized user experience.
 
-## Recommended IDE Setup
+## Project preview
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+<details>
+  <summary>Click to view images</summary>
 
-## Type Support for `.vue` Imports in TS
+### Mobile version
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+![alt text](/public/overviewImages/mobile1.png)
+![alt text](/public/overviewImages/mobile2.png)
+![alt text](/public/overviewImages/mobile3.png)
+![alt text](/public/overviewImages/mobile4.png)
+![alt text](/public/overviewImages/mobile5.png)
 
-## Customize configuration
+### Desktop version
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![alt text](/public/overviewImages/desktop1.png)
+![alt text](/public/overviewImages/desktop2.png)
+![alt text](/public/overviewImages/desktop3.png)
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+</details>
