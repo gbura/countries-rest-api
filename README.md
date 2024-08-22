@@ -1,6 +1,6 @@
 # Countries REST API
 
-A fully responsive application that allows users to explore general information about any country in the world. Users can check details such as population, currency, borders, and flags. The app features a light mode and dark mode toggle for a personalized user experience.
+Fully responsive application that allows users to explore general information about any country in the world. Users can check details such as population, currency, borders, and flags. The app features a light mode and dark mode toggle for a personalized user experience.
 
 ## Project preview
 
